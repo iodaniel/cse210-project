@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "rename",
+			"path": "."
+		},
+		{
+			"name": "cse210-project",
+			"path": "../../cse210-project"
+		},
+		{
+			"name": "docs",
+			"path": "../docs"
+		}
+	],
+	"settings": {}
+}
