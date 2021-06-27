@@ -10,10 +10,10 @@ class InputService:
 
         self._screen = screen
         self._keys = {}
-        self._keys[119] = lever(0, -1) # UP
-        self._keys[115] = lever(0, 1) # DOWN
-        self._keys[97] = lever(-1, 0) # LEFT
-        self._keys[100] = lever(1, 0) # RIGHT
+        self._keys[119] = lever(0, -1) # go up
+        self._keys[115] = lever(0, 1) # go down
+        self._keys[97] = lever(-1, 0) # move left
+        self._keys[100] = lever(1, 0) # move right
         self._current = lever(1, 0)
         
     def get_direction(self):
