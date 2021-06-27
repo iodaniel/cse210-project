@@ -18,7 +18,11 @@ root                    (project root folder)
 
 ## Required Technologies
 ---
-[list required libraries]
+to run the project you need to use the enviromento  
+  ```
+  source env/bin/activate
+  ```
+to use all the packages we use in the project.
 
 ## Authors
 
