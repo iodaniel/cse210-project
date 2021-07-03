@@ -4,6 +4,12 @@
 #limit_left_right_movemment = 520
 #Limit_up_down = 700
 class Constants:
+    """
+    These are the constants needed to created the rate of movement of the spacecraft, aim, and fire cadence
+    of the laser. 
+    Alsom the asteroids' velocity and their rotation and their three shapes showed in screen
+    
+    """
     SCREEN_WIDTH = 800
     SCREEN_HEIGHT = 600
 

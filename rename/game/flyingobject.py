@@ -13,7 +13,14 @@ SCREEN_HEIGHT = 600
 SHIP_RADIUS = 30
 
 class FlyingObjects(ABC):
+    """
+    class used to manage the different requirements of the spaceship.
+
+    """
     def __init__(self, img):
+        """
+        the shape, speed and movement of the ship
+        """
         self.center = Point()
         self.velocity = Velocity()
         self.alive = True
@@ -28,11 +35,17 @@ class FlyingObjects(ABC):
         #self.alpha = 255
         
     def advance(self):
+        """
+        manage the movement.
+        """
         self.wrap()
         self.center.y += self.velocity.dy
         self.center.x += self.velocity.dx
 
     def wrap(self):
+        """
+        use the constants of get the required width and height of the screen.
+        """
         if self.center.x > SCREEN_WIDTH:
             self.center.x -= SCREEN_WIDTH
         if self.center.x < 0:
@@ -44,8 +57,14 @@ class FlyingObjects(ABC):
 
     
     def is_alive(self):
+        """
+        helps to determine if the spaceship is not destroyed.
+        """
         return self.alive
     
     def draw(self):
+        """
+        display the game in the screen.
+        """
         arcade.draw_texture_rectangle(self.center.x, self.center.y, self.width, self.height, self.texture,
                                       self.angle, 255)

@@ -57,7 +57,12 @@ class Game(arcade.Window):
          # TODO: draw each object    
         self.ship.draw()    
         #self.bullet.draw()
+
     def remove_notAliveObjects(self):
+        """
+        This function helps to remove the asteroid when the laser hits them
+
+        """
         for bullet in self.bullets:
             if not bullet.is_alive():
                 self.bullets.remove(bullet)   
@@ -67,6 +72,10 @@ class Game(arcade.Window):
                 self.asteroids.remove(asteroid) 
 
     def check_collisions(self):
+        """
+        Used to check when the asteroid is evaded or destroyed
+        
+        """
         for bullet in self.bullets:
             for asteroid in self.asteroids:
                 if((bullet.alive) and (asteroid.alive)):

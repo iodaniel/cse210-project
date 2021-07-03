@@ -1,5 +1,7 @@
 class lever:
-    
+    """
+    Class used to control the movement of the spaceship.
+    """    
     def __init__(self, x, y):
         
         self._x = x
