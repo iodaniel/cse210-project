@@ -1,10 +1,12 @@
 import arcade
 import math
 import random
+import pygame    #library to play the music
 
 from abc import ABC, abstractmethod
 from ship import Ships
 from bullet import Bullets
+from pygame import mixer   #the library to run the music for the laser and also a background music
 
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
@@ -16,6 +18,10 @@ class Game(arcade.Window):
     each of the above classes.
     You are welcome to modify anything in this class.
     """
+
+    #Background music of the game
+    #mixer.music.load("background.wav")
+    #mixer.music.play(-1)
 
     def __init__(self, width, height):
         """
@@ -152,6 +158,8 @@ class Game(arcade.Window):
             self.held_keys.add(key)
 
             if key == arcade.key.SPACE:
+                laser_sound = mixer.Sound("laser.wav") # when we push space bar the laser sound activate
+                laser_sound.play() # execute the sound of the laser
                 bullet = Bullets(self.ship.angle, self.ship.center.x, self.ship.center.y)
                 self.bullets.append(bullet)
                 bullet.fire()
