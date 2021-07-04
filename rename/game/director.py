@@ -5,6 +5,8 @@ import random
 from abc import ABC, abstractmethod
 from ship import Ships
 from bullet import Bullets
+from bigAsteroid import BigAsteroids
+from constant import Constants
 
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
@@ -24,15 +26,15 @@ class Game(arcade.Window):
         :param height: Screen height
         """
         super().__init__(width, height)
-        #arcade.set_background_color(arcade.color.SMOKY_BLACK)
-        self.example_image = arcade.load_texture("space_background.png")
+        arcade.set_background_color(arcade.color.SMOKY_BLACK)
+        #self.example_image = arcade.load_texture("../space.png")
         self.held_keys = set()
         
         self.asteroids = []
 
-        #for i in range(INITIAL_ROCK_COUNT):
-            #bigAst = LargeRock()
-            #self.asteroids.append(bigAst)
+        for i in range(Constants.INITIAL_ROCK_COUNT):
+            bigAst = BigAsteroids()
+            self.asteroids.append(bigAst)
             
         self.ship= Ships()
         
@@ -148,6 +150,7 @@ class Game(arcade.Window):
         Puts the current key in the set of keys that are being held.
         You will need to add things here to handle firing the bullet.
         """
+        # add sound 
         if self.ship.alive:
             self.held_keys.add(key)
 

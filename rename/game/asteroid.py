@@ -1,6 +1,6 @@
 from flyingobject import FlyingObjects
 
-class Asteroid(FlyingObjects):
+class Asteroids(FlyingObjects):
     """ 
     we have three sizes of asteroids this class helps to get the intial type.
     """
