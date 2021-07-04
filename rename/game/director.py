@@ -1,17 +1,16 @@
 import arcade
 import math
 import random
-import pygame    #library to play the music
+import pygame as pg  #library to play the music
 
 from abc import ABC, abstractmethod
 from ship import Ships
 from bullet import Bullets
-<<<<<<< HEAD
 from bigAsteroid import BigAsteroids
 from constant import Constants
-=======
+
 from pygame import mixer   #the library to run the music for the laser and also a background music
->>>>>>> c9ec06ebecdb9305ace1ff42dabb0d8232521764
+pg.init()
 
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
@@ -25,8 +24,8 @@ class Game(arcade.Window):
     """
 
     #Background music of the game
-    #mixer.music.load("background.wav")
-    #mixer.music.play(-1)
+    mixer.music.load("background.wav")
+    mixer.music.play(-10)
 
     def __init__(self, width, height):
         """
@@ -164,12 +163,13 @@ class Game(arcade.Window):
             self.held_keys.add(key)
 
             if key == arcade.key.SPACE:
-                laser_sound = mixer.Sound("laser.wav") # when we push space bar the laser sound activate
-                laser_sound.play() # execute the sound of the laser
+               
                 bullet = Bullets(self.ship.angle, self.ship.center.x, self.ship.center.y)
                 self.bullets.append(bullet)
-                bullet.fire()
-
+             
+                bullet.fire()#mixer.Sound("laser.wav") 
+                laser_sound = mixer.Sound("laser.wav") # when we push space bar the laser sound activate
+                laser_sound.play()
     def on_key_release(self, key: int, modifiers: int):
         """
         Removes the current key from the set of held keys.
