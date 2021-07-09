@@ -1,0 +1,6 @@
+https://github.com/iodaniel/cse210-project
+
+Comments - We believe we deserve a 5 becuase we finish the asteroid behavior, the 
+sound effect of the laser and the sound effect of the game. we will planning to 
+continmue with the development and improvement of the game. game run with 
+python director.py inside of the file game.  

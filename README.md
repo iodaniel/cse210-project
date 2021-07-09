@@ -15,6 +15,17 @@ root                    (project root folder)
 +-- LICENSE             (license file)
 +-- README.md           (general info)
 ```
+## Project run 
+you can start the game with the follow code. 
+
+```
+cd rename
+cd game 
+python director.py
+```
+
+
+
 
 ## Required Technologies
 ---
