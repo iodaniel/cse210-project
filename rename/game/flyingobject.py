@@ -60,7 +60,9 @@ class FlyingObjects(ABC):
         """
         helps to determine if the spaceship is not destroyed.
         """
+        
         return self.alive
+       # print("alive")
     
     def draw(self):
         """
