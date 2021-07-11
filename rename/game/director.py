@@ -167,9 +167,10 @@ class Game(arcade.Window):
                 bullet = Bullets(self.ship.angle, self.ship.center.x, self.ship.center.y)
                 self.bullets.append(bullet)
              
-                bullet.fire()#mixer.Sound("laser.wav") 
+                bullet.fire()
                 laser_sound = mixer.Sound("laser.wav") # when we push space bar the laser sound activate
                 laser_sound.play()
+
     def on_key_release(self, key: int, modifiers: int):
         """
         Removes the current key from the set of held keys.
